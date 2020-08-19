@@ -3,8 +3,6 @@ FROM adoptopenjdk:8-jdk-hotspot
 CMD ["gradle"]
 
 ENV GRADLE_HOME /opt/gradle
-ENV http_proxy aswproxyhk2.aswatson.net:8080
-ENV http_proxys aswproxyhk2.aswatson.net:8080
 
 RUN set -o errexit -o nounset \
     && echo "Adding gradle user and group" \
@@ -51,3 +49,6 @@ RUN set -o errexit -o nounset \
     \
     && echo "Testing Gradle installation" \
     && gradle --version
+
+ENV http_proxy aswproxyhk2.aswatson.net:8080
+ENV http_proxys aswproxyhk2.aswatson.net:8080
